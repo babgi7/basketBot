@@ -1,0 +1,203 @@
+.chat-container {
+  height: calc(100vh - 180px);
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+.chat-message {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px !important;
+}
+
+.user-message {
+  background-color: #f29000;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  float: right;
+  clear: both;
+}
+
+.bot-message {
+  background-color: #e9e9e9;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  float: left;
+  clear: both;
+}
+
+.cards-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: nowrap;
+  max-width: 75%;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  width: 100%; /* Add this to make the card full width */
+}
+
+.card-body {
+  flex-direction: row; /* Change this from column to row */
+  justify-content: space-between; /* Add this to space out the title and price */
+  align-items: center; /* Add this to align the title and price vertically */
+}
+
+.card-img-container {
+  flex: 0 0 80px;
+  margin-right: 1rem;
+}
+
+.card-img-top {
+  width: auto;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+.card-action {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.btn .btn-danger {
+  box-shadow: none;
+}
+
+.form-control {
+  border-radius: 30px;
+  box-shadow: none;
+}
+
+.form-control:focus {
+  border-color: #f29000;
+  box-shadow: none;
+}
+
+.rounded-pill {
+  border-radius: 50px;
+  padding-left: 40px;
+}
+
+.fas.fa-paper-plane {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f29000;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.send-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.input-group-text {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  left: -40px;
+}
+
+.send-icon {
+  position: relative;
+  left: -20px;
+}
+
+.super-rounded {
+  border-radius: 50px !important;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.super-rounded:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: #333 1px solid;
+}
+
+.popover {
+  max-width: 300px;
+}
+
+.apple-pay-btn {
+  background-color: #000;
+  border: none;
+  color: white;
+  padding: 12px 50px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  display: block;
+  margin-top: 10px;
+}
+
+.no-box-shadow {
+  box-shadow: none !important;
+}
+
+.btn-remove {
+  background-color: transparent;
+  color: #f29000;
+  border: none;
+}
+
+.popover {
+  max-width: 600px;
+  width: 400px;
+}
+
+.popover .popover-body {
+  font-size: 16px;
+  padding: 16px;
+}
+
+.send-icon .material-icons {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f29000;
+}
+
+.popover-content-container {
+  position: relative;
+  min-height: 150px;
+}
+
+.popover-summary {
+  padding-bottom: 50px; /* Add some padding to make room for the Apple Pay button */
+}
+
+.apple-pay-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

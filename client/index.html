@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>BasketBot</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark fixed-top"
+      style="background-color: #f29000;"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><span style="font-weight: bold;">Basket</span
+          ><span style="font-weight: lighter;">Bot</span></a
+        >
+
+        <button
+          id="checkoutButton"
+          class="btn btn-light d-none"
+          data-bs-toggle="popover"
+          data-bs-placement="bottom"
+          title="Checkout Summary"
+        >
+          <i class="material-icons" style="color: #f29000;">shopping_cart</i>
+          <span style="color: #f29000;">Check out</span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="container mt-5 pt-3">
+      <div id="chat-container" class="chat-container">
+        <!-- Chat messages will be added here dynamically -->
+
+        <div class="chat-body">
+          <div class="chat-message bot-message">
+            <div class="message-content">
+              <span class="message-text"
+                >Hey there 👋<br />type the meal you want to shop its
+                ingredients</span
+              >
+            </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fixed-bottom">
+      <div class="container">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            id="userInput"
+            class="form-control super-rounded"
+            placeholder="What's in your mind..."
+            aria-label="User input"
+          />
+          <span class="input-group-text send-icon">
+            <i class="material-icons" id="sendButton">send</i>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
