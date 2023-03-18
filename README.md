@@ -1,5 +1,7 @@
 # BasketBot
 
+![image](https://i.imgur.com/f3Ssn53.png)
+
 This is a chatbot that uses the GPT-3.5 model to generate responses to user messages. The chatbot can display cards with product information and prices, and allows users to remove cards and view a checkout summary.
 
 ## Usage
