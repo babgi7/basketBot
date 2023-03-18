@@ -29,7 +29,7 @@ X_API_KEY={{your api key}}
 
 
 ## Presnation and  Demo
-[[https://youtu.be/5FJXdg54dgI](https://youtu.be/tSKf4yOAosU)](https://youtu.be/tSKf4yOAosU)
+[https://youtu.be/tSKf4yOAosU](https://youtu.be/tSKf4yOAosU)
 
 
 ## Credits
