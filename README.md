@@ -15,14 +15,22 @@ When you have added one or more products to your cart, click the "Checkout" butt
 ## Dependencies
 
 This chatbot uses the following dependencies:
-
+- Nodejs 16
 - Material Design for Bootstrap for the UI
 - Fetch API for making API requests
 - GPT-3.5 model for generating responses
 
 ## Installation
 
-To install the chatbot, simply download the source code and open index.html in a web browser. You will need an internet connection to use the GPT-3.5 model.
+To install the chatbot, simply download the source code and run npm i, once it's done open http://localhost:3000/ in your a web browser. You will need an internet connection to use the GPT-3.5 model.
+also create .env file in the root directory with 
+CUSTOMER_ID={{customer id}}
+X_API_KEY={{your api key}}
+
+
+## Demo
+[https://youtu.be/5FJXdg54dgI](https://youtu.be/5FJXdg54dgI)
+
 
 ## Credits
 
