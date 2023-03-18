@@ -96,12 +96,30 @@ function getBotResponse(message) {
     redirect: "follow",
   };
   console.log(requestOptions);
+
+  // let json = [
+  //   {
+  //     title: "Potato Fresh",
+  //     price: "SAR 1.50",
+  //     imgUrl:
+  //       "https://cdnprod.mafretailproxy.com/sys-master-root/h8e/h2e/9216717324318/78680_main.jpg_200Wx200H",
+  //   },
+  //   {
+  //     title: "Al Taie Chickpeas 540g",
+  //     price: "SAR 3.50",
+  //     imgUrl:
+  //       "https://cdnprod.mafretailproxy.com/sys-master-root/h83/h60/14014280269854/647837_main.jpg_200Wx200H",
+  //   },
+  // ];
+
+  // removeLoadingMessage(loadingMessage);
+  // displayBotMessage(json);
+  // updateCheckoutSummary();
   fetch("http://localhost:3000/api/data", requestOptions)
     .then((response) => response.json())
     .then((result) => {
       removeLoadingMessage(loadingMessage);
       displayBotMessage(result.data);
-
       updateCheckoutSummary();
     })
     .catch((error) => {
@@ -141,7 +159,6 @@ document.getElementById("sendButton").addEventListener("click", () => {
 function getPopoverContent(totalPrice) {
   const vatAmount = totalPrice * 0.15;
   const grandTotal = totalPrice + vatAmount;
-
   return `
     <div class="popover-content-container">
       <div class="popover-summary">
@@ -152,10 +169,11 @@ function getPopoverContent(totalPrice) {
       </div>
 
       <div>
-      <button class="apple-pay-btn fixed-bottom w-100">Apple Pay</button>
+      <div class="apple-pay-btn fixed-bottom w-100"> Pay 
+      
+      </div>
       </div>
     </div>
-    
   `;
 }
 
@@ -166,10 +184,9 @@ function updateCheckoutSummary() {
 
   cards.forEach((card) => {
     const priceText = card.querySelector(".card-text").textContent;
-    const price = parseFloat(priceText.replace("Price: ", ""));
-    totalPrice += price;
+    const price = parseFloat(priceText.replace("Price: SAR ", ""));
+    totalPrice += Number(price);
   });
-
   if (cards.length > 0) {
     checkoutButton.classList.remove("d-none");
     const popoverInstance = mdb.Popover.getInstance(checkoutButton);

@@ -2,7 +2,6 @@ const webdriver = require("selenium-webdriver");
 const { By, Key, until } = webdriver;
 const chrome = require("selenium-webdriver/chrome");
 const express = require("express");
-const bodyParser = require("body-parser");
 const path = require("path");
 require("dotenv").config();
 const { env } = process;
@@ -20,37 +19,37 @@ app.post("/api/data", async (req, res) => {
   let text = data.choices[0].message.content;
   console.log("text:", text);
   let val;
-  if (!Array.isArray(text)) {
-    let newText = data.choices[0].message.content;
-    newText =
-      '\
-    ```javascript\
-    const samosaIngredients = ["Potatoes", "Peas", "Onion", "Garlic", "Ginger", "Chili peppers", "Turmeric", "Coriander powder", "Garam masala", "Cumin seeds", "Mustard seeds", "Lemon juice", "Oil", "Water", "Salt", "Pastry sheets"];\
-    ```';
-    newText = newText.replace(/```/g, "");
-    const startIndex = newText.indexOf("[");
-    const endIndex = newText.lastIndexOf("]");
-    const myArray = JSON.parse(newText.substring(startIndex, endIndex + 1));
-    val = myArray;
-  }
+  // if (!Array.isArray(text)) {
+  let newText = data.choices[0].message.content;
+  // newText =
+  //   '\
+  // ```javascript\
+  // const samosaIngredients = ["Potatoes", "Peas", "Onion", "Garlic", "Ginger", "Chili peppers", "Turmeric", "Coriander powder", "Garam masala", "Cumin seeds", "Mustard seeds", "Lemon juice", "Oil", "Water", "Salt", "Pastry sheets"];\
+  // ```';
+  newText = newText.replace(/```/g, "");
+  const startIndex = newText.indexOf("[");
+  const endIndex = newText.lastIndexOf("]");
+  const myArray = JSON.parse(newText.substring(startIndex, endIndex + 1));
+  val = myArray;
+  // }
   console.log("match", val);
-  val = [
-    "potatoes",
-    "peas",
-    "onions",
-    "green chilies",
-    "ginger",
-    "garlic",
-    "coriander",
-    "cumin",
-    "garam masala",
-    "turmeric",
-    "salt",
-    "oil",
-    "flour",
-    "water",
-  ];
-  val.length = 2;
+  // val = [
+  //   "potatoes",
+  //   "peas",
+  //   "onions",
+  //   "green chilies",
+  //   "ginger",
+  //   "garlic",
+  //   "coriander",
+  //   "cumin",
+  //   "garam masala",
+  //   "turmeric",
+  //   "salt",
+  //   "oil",
+  //   "flour",
+  //   "water",
+  // ];
+  val.length = 5;
   const items = await getAllData(val);
   return res.send({ data: items });
   // Todo call again if no array is passed
@@ -80,7 +79,7 @@ async function getData(word) {
           "/html/body/div/div[3]/div/div[3]/div[2]/div[3]/ul/div/div[1]/div/div/div[1]/div/ul/div[2]/div[3]/div[3]/div[1]/div"
         )
       ),
-      30000
+      40000
     );
 
     title = await driver
@@ -124,7 +123,7 @@ async function chatGpt(input) {
     messages: [
       {
         role: "user",
-        content: input,
+        content: `"what is the top 5 main ingredient of ${input}, give it to me as a list as javascript array"`,
       },
     ],
   };
