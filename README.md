@@ -34,4 +34,4 @@ X_API_KEY={{your api key}}
 
 ## Credits
 
-This chatbot was created by Mazen Babgi, Mohammad Qara, and Umar AL-Murabit and is licensed under the MIT License. The GPT-3.5 model was developed by OpenAI.
+This chatbot was created by Mazen Babgi, Mohammad Qara, and Umar AL-Murabit as Saudi ChatGPT Hackathon Project and is licensed under the MIT License. The GPT-3.5 model was developed by OpenAI.
