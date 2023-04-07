@@ -19,36 +19,13 @@ app.post("/api/data", async (req, res) => {
   let text = data.choices[0].message.content;
   console.log("text:", text);
   let val;
-  // if (!Array.isArray(text)) {
   let newText = data.choices[0].message.content;
-  // newText =
-  //   '\
-  // ```javascript\
-  // const samosaIngredients = ["Potatoes", "Peas", "Onion", "Garlic", "Ginger", "Chili peppers", "Turmeric", "Coriander powder", "Garam masala", "Cumin seeds", "Mustard seeds", "Lemon juice", "Oil", "Water", "Salt", "Pastry sheets"];\
-  // ```';
   newText = newText.replace(/```/g, "");
   const startIndex = newText.indexOf("[");
   const endIndex = newText.lastIndexOf("]");
   const myArray = JSON.parse(newText.substring(startIndex, endIndex + 1));
   val = myArray;
-  // }
   console.log("match", val);
-  // val = [
-  //   "potatoes",
-  //   "peas",
-  //   "onions",
-  //   "green chilies",
-  //   "ginger",
-  //   "garlic",
-  //   "coriander",
-  //   "cumin",
-  //   "garam masala",
-  //   "turmeric",
-  //   "salt",
-  //   "oil",
-  //   "flour",
-  //   "water",
-  // ];
   val.length = 5;
   const items = await getAllData(val);
   return res.send({ data: items });
