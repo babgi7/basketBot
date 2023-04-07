@@ -8,17 +8,12 @@
     "start": "node server/index.js",
     "build": "echo This is a static template, there is no bundler or bundling involved!"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/codesandbox-app/static-template.git"
-  },
   "keywords": [],
   "author": "basketBot Team",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/codesandbox-app/static-template/issues"
   },
-  "homepage": "https://github.com/codesandbox-app/static-template#readme",
   "devDependencies": {
     "chromedriver": "^111.0.0",
     "serve": "^11.2.0"
