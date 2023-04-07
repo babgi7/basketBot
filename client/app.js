@@ -61,28 +61,11 @@ function displayBotMessage(cards) {
   });
 }
 
-// var raw = JSON.stringify({
-//   model: "gpt-3.5-turbo",
-//   messages: [
-//     {
-//       role: "user",
-//       content: "Hello",
-//     },
-//   ],
-// });
 
 function getBotResponse(message) {
   const loadingMessage = displayLoadingMessage();
   console.log("###", loadingMessage);
-  // raw = JSON.stringify({
-  //   model: "gpt-3.5-turbo",
-  //   messages: [
-  //     {
-  //       role: "user",
-  //       content: message,
-  //     },
-  //   ],
-  // });
+
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   console.log("##", message);
@@ -97,24 +80,6 @@ function getBotResponse(message) {
   };
   console.log(requestOptions);
 
-  // let json = [
-  //   {
-  //     title: "Potato Fresh",
-  //     price: "SAR 1.50",
-  //     imgUrl:
-  //       "https://cdnprod.mafretailproxy.com/sys-master-root/h8e/h2e/9216717324318/78680_main.jpg_200Wx200H",
-  //   },
-  //   {
-  //     title: "Al Taie Chickpeas 540g",
-  //     price: "SAR 3.50",
-  //     imgUrl:
-  //       "https://cdnprod.mafretailproxy.com/sys-master-root/h83/h60/14014280269854/647837_main.jpg_200Wx200H",
-  //   },
-  // ];
-
-  // removeLoadingMessage(loadingMessage);
-  // displayBotMessage(json);
-  // updateCheckoutSummary();
   fetch("http://localhost:3000/api/data", requestOptions)
     .then((response) => response.json())
     .then((result) => {
